@@ -94,3 +94,6 @@ $RECYCLE.BIN/
 
 *.dmp
 crash*.txt
+
+# Separate repository for the hosted smartphone build
+/phone-site/
