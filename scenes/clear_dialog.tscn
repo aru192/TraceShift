@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/clear_dialog.gd" id="1_clear"]
+
+[node name="ClearDialog" type="Control" node_paths=PackedStringArray("title_label", "stage_label", "moves_label", "next_button", "retry_button", "select_button", "panel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_clear")
+title_label = NodePath("ColorRect/CenterContainer/Panel/VBoxContainer/TitleLabel")
+stage_label = NodePath("ColorRect/CenterContainer/Panel/VBoxContainer/StageLabel")
+moves_label = NodePath("ColorRect/CenterContainer/Panel/VBoxContainer/MovesLabel")
+next_button = NodePath("ColorRect/CenterContainer/Panel/VBoxContainer/NextButton")
+retry_button = NodePath("ColorRect/CenterContainer/Panel/VBoxContainer/RetryButton")
+select_button = NodePath("ColorRect/CenterContainer/Panel/VBoxContainer/SelectButton")
+panel = NodePath("ColorRect/CenterContainer/Panel")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.75, 0.79, 0.83, 0.65)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="ColorRect/CenterContainer"]
+custom_minimum_size = Vector2(920, 900)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="ColorRect/CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.28, 0.34, 1)
+theme_override_font_sizes/font_size = 54
+text = "STAGE CLEARED!"
+horizontal_alignment = 1
+
+[node name="StageLabel" type="Label" parent="ColorRect/CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "STAGE 01"
+horizontal_alignment = 1
+
+[node name="MovesLabel" type="Label" parent="ColorRect/CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.28, 0.34, 1)
+theme_override_font_sizes/font_size = 32
+text = "MOVES USED: 2 (MAX: 3)"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="NextButton" type="Button" parent="ColorRect/CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "NEXT STAGE"
+
+[node name="RetryButton" type="Button" parent="ColorRect/CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "もう一度"
+
+[node name="SelectButton" type="Button" parent="ColorRect/CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100面から選ぶ"

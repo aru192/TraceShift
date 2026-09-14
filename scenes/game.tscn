@@ -1,0 +1,166 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_game"]
+[ext_resource type="Script" path="res://scripts/puzzle_board.gd" id="2_board"]
+[ext_resource type="Script" path="res://scripts/core_piece.gd" id="3_core"]
+[ext_resource type="PackedScene" path="res://scenes/clear_dialog.tscn" id="4_clear"]
+
+[node name="Game" type="Control" node_paths=PackedStringArray("board", "core", "stage_label", "moves_label", "target_info_label", "rule_badge_label", "hint_label", "retry_button", "select_button", "board_container", "clear_dialog")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_game")
+board = NodePath("MainLayout/BoardContainer/PuzzleBoard")
+core = NodePath("MainLayout/BoardContainer/PuzzleBoard/CorePiece")
+stage_label = NodePath("MainLayout/TopBar/CenterBox/StageLabel")
+moves_label = NodePath("MainLayout/InfoBar/HBox/MovesLabel")
+target_info_label = NodePath("MainLayout/InfoBar/HBox/TargetInfoLabel")
+rule_badge_label = NodePath("MainLayout/TopBar/CenterBox/RuleBadgeLabel")
+hint_label = NodePath("MainLayout/BottomBar/HintLabel")
+retry_button = NodePath("MainLayout/TopBar/RetryButton")
+select_button = NodePath("MainLayout/TopBar/SelectButton")
+board_container = NodePath("MainLayout/BoardContainer")
+clear_dialog = NodePath("ClearDialog")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.97, 0.98, 0.99, 1)
+
+[node name="MainLayout" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="TopMargin" type="Control" parent="MainLayout"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TopBar" type="HBoxContainer" parent="MainLayout"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+mouse_filter = 2
+
+[node name="SelectButton" type="Button" parent="MainLayout/TopBar"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100面"
+
+[node name="CenterBox" type="VBoxContainer" parent="MainLayout/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+mouse_filter = 2
+
+[node name="StageLabel" type="Label" parent="MainLayout/TopBar/CenterBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "STAGE 01"
+horizontal_alignment = 1
+
+[node name="RuleBadgeLabel" type="Label" parent="MainLayout/TopBar/CenterBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.28, 0.34, 1)
+theme_override_font_sizes/font_size = 30
+text = "[ WALL TRACE ]"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="MainLayout/TopBar"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "やり直す"
+
+[node name="InfoBar" type="MarginContainer" parent="MainLayout"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+mouse_filter = 2
+
+[node name="HBox" type="HBoxContainer" parent="MainLayout/InfoBar"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MovesLabel" type="Label" parent="MainLayout/InfoBar/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 38
+text = "MOVES: 3 / 3"
+
+[node name="TargetInfoLabel" type="Label" parent="MainLayout/InfoBar/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.28, 0.34, 1)
+theme_override_font_sizes/font_size = 34
+text = "ORBS: 0"
+horizontal_alignment = 2
+
+[node name="BoardContainer" type="Control" parent="MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="PuzzleBoard" type="Node2D" parent="MainLayout/BoardContainer"]
+script = ExtResource("2_board")
+
+[node name="CorePiece" type="Node2D" parent="MainLayout/BoardContainer/PuzzleBoard"]
+script = ExtResource("3_core")
+
+[node name="BottomBar" type="VBoxContainer" parent="MainLayout"]
+custom_minimum_size = Vector2(0, 370)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 18
+
+[node name="HintLabel" type="Label" parent="MainLayout/BottomBar"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 36
+text = "相手の道を残そう。"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ActionRow" type="HBoxContainer" parent="MainLayout/BottomBar"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 24
+
+[node name="UndoButton" type="Button" parent="MainLayout/BottomBar/ActionRow"]
+custom_minimum_size = Vector2(440, 132)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "1手戻す"
+
+[node name="HintButton" type="Button" parent="MainLayout/BottomBar/ActionRow"]
+custom_minimum_size = Vector2(440, 132)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "考えるヒント"
+
+[node name="BottomSpace" type="Control" parent="MainLayout/BottomBar"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ClearDialog" parent="." instance=ExtResource("4_clear")]
+visible = false
+layout_mode = 1

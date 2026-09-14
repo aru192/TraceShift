@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/title_controller.gd" id="1_title"]
+
+[node name="Title" type="Control" node_paths=PackedStringArray("play_button", "select_button", "progress_label", "reset_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_title")
+play_button = NodePath("CenterContainer/VBoxContainer/PlayButton")
+select_button = NodePath("CenterContainer/VBoxContainer/SelectButton")
+progress_label = NodePath("CenterContainer/VBoxContainer/ProgressLabel")
+reset_button = NodePath("CenterContainer/VBoxContainer/ResetButton")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.97, 0.98, 0.99, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(940, 0)
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="TitleBox" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SubTitle" type="Label" parent="CenterContainer/VBoxContainer/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.28, 0.34, 1)
+theme_override_font_sizes/font_size = 32
+text = "DUET  /  100 PUZZLES"
+horizontal_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.28, 0.34, 1)
+theme_override_font_sizes/font_size = 96
+text = "TRACE SHIFT"
+horizontal_alignment = 1
+
+[node name="ConceptLabel" type="Label" parent="CenterContainer/VBoxContainer/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.28, 0.34, 1)
+theme_override_font_sizes/font_size = 36
+text = "2人の道を、考える。\n\nAとBを交互に動かし、同じ文字の輪へ。\n通った道は壁に。相手の道を残そう。\n100面を進むと、矢印と一時停止が登場。"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 145)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "はじめる / つづきから"
+
+[node name="SelectButton" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 132)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "100面から選ぶ"
+
+[node name="ProgressLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.28, 0.34, 1)
+theme_override_font_sizes/font_size = 36
+text = "クリア 0 / 100"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.28, 0.34, 1)
+theme_override_font_sizes/font_size = 24
+text = "この100面の記録をリセット"

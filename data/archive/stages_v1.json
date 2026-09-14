@@ -1,0 +1,4236 @@
+[
+  {
+    "stage_id": 1,
+    "name": "First Step",
+    "width": 5,
+    "height": 7,
+    "max_moves": 1,
+    "start": [
+      2,
+      5
+    ],
+    "goal": [
+      2,
+      2
+    ],
+    "walls": [],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "ドラッグして移動。ゴールへ直接進もう。"
+  },
+  {
+    "stage_id": 2,
+    "name": "Solidify",
+    "width": 5,
+    "height": 7,
+    "max_moves": 2,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      2
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "1手目で通った軌跡は壁になる。2手目は壁を避けて進もう。"
+  },
+  {
+    "stage_id": 3,
+    "name": "Avoid Trap",
+    "width": 5,
+    "height": 7,
+    "max_moves": 2,
+    "start": [
+      2,
+      5
+    ],
+    "goal": [
+      2,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "自分の退路を壁で塞がないようにルートを選ぼう。"
+  },
+  {
+    "stage_id": 4,
+    "name": "Corner Turn",
+    "width": 5,
+    "height": 7,
+    "max_moves": 2,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "角を曲がってゴールへ。壁を作る位置を意識しよう。"
+  },
+  {
+    "stage_id": 5,
+    "name": "S-Curve",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "3手でゴールを目指そう。通った軌跡が盤面を狭めていく。"
+  },
+  {
+    "stage_id": 6,
+    "name": "Narrow Passage",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      0,
+      5
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "狭い通路を塞がないように慎重にルートを選ぼう。"
+  },
+  {
+    "stage_id": 7,
+    "name": "Bypass",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      2,
+      0
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "中央の障害物を左右どちらから迂回するか考えよう。"
+  },
+  {
+    "stage_id": 8,
+    "name": "Dead End Warning",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      5
+    ],
+    "walls": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "行き止まりを作らないよう、上部の空間を広く使おう。"
+  },
+  {
+    "stage_id": 9,
+    "name": "Circuit",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      2,
+      5
+    ],
+    "goal": [
+      2,
+      2
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "ぐるりと回ってゴールへアプローチしよう。"
+  },
+  {
+    "stage_id": 10,
+    "name": "Trial 1",
+    "width": 5,
+    "height": 7,
+    "max_moves": 4,
+    "start": [
+      0,
+      6
+    ],
+    "goal": [
+      4,
+      0
+    ],
+    "walls": [
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "チュートリアルの総まとめ。4手先まで見通してゴールへ！"
+  },
+  {
+    "stage_id": 11,
+    "name": "Plan 1",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 12,
+    "name": "Plan 2",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 13,
+    "name": "Plan 3",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 14,
+    "name": "Plan 4",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 15,
+    "name": "Plan 5",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 16,
+    "name": "Plan 6",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 17,
+    "name": "Plan 7",
+    "width": 5,
+    "height": 7,
+    "max_moves": 3,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 18,
+    "name": "Plan 8",
+    "width": 5,
+    "height": 7,
+    "max_moves": 4,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 19,
+    "name": "Plan 9",
+    "width": 5,
+    "height": 7,
+    "max_moves": 4,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 20,
+    "name": "Plan 10",
+    "width": 5,
+    "height": 7,
+    "max_moves": 4,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 21,
+    "name": "Plan 11",
+    "width": 5,
+    "height": 7,
+    "max_moves": 4,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 22,
+    "name": "Plan 12",
+    "width": 5,
+    "height": 7,
+    "max_moves": 4,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 23,
+    "name": "Plan 13",
+    "width": 5,
+    "height": 7,
+    "max_moves": 4,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 24,
+    "name": "Plan 14",
+    "width": 5,
+    "height": 7,
+    "max_moves": 4,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 25,
+    "name": "Plan 15",
+    "width": 5,
+    "height": 7,
+    "max_moves": 4,
+    "start": [
+      1,
+      5
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "壁になる軌跡を計算し、次のターンの移動経路を残そう。"
+  },
+  {
+    "stage_id": 26,
+    "name": "Orb Orbit 1",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        3,
+        5
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 27,
+    "name": "Orb Orbit 2",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        2,
+        3
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 28,
+    "name": "Orb Orbit 3",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        4,
+        4
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 29,
+    "name": "Orb Orbit 4",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        3,
+        5
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 30,
+    "name": "Orb Orbit 5",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        2,
+        3
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 31,
+    "name": "Orb Orbit 6",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        4,
+        4
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 32,
+    "name": "Orb Orbit 7",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        3,
+        5
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 33,
+    "name": "Orb Orbit 8",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        2,
+        3
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 34,
+    "name": "Orb Orbit 9",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 35,
+    "name": "Orb Orbit 10",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        3,
+        5
+      ],
+      [
+        1,
+        5
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 36,
+    "name": "Orb Orbit 11",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 37,
+    "name": "Orb Orbit 12",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        4,
+        4
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 38,
+    "name": "Orb Orbit 13",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 39,
+    "name": "Orb Orbit 14",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        5
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 40,
+    "name": "Orb Orbit 15",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        4,
+        4
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "trace_type": "wall",
+    "fade_turns": 0,
+    "hint": "すべてのオーブを回収してからゴールへ到達しよう！"
+  },
+  {
+    "stage_id": 41,
+    "name": "Bridge Cross 1",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 42,
+    "name": "Bridge Cross 2",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "checkpoints": [],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 43,
+    "name": "Bridge Cross 3",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 44,
+    "name": "Bridge Cross 4",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "checkpoints": [],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 45,
+    "name": "Bridge Cross 5",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 46,
+    "name": "Bridge Cross 6",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "checkpoints": [],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 47,
+    "name": "Bridge Cross 7",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 48,
+    "name": "Bridge Cross 8",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "checkpoints": [],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 49,
+    "name": "Bridge Cross 9",
+    "width": 6,
+    "height": 8,
+    "max_moves": 3,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 50,
+    "name": "Bridge Cross 10",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "checkpoints": [],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 51,
+    "name": "Bridge Cross 11",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 52,
+    "name": "Bridge Cross 12",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "checkpoints": [
+      [
+        3,
+        1
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 53,
+    "name": "Bridge Cross 13",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        4,
+        2
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 54,
+    "name": "Bridge Cross 14",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "checkpoints": [
+      [
+        2,
+        1
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 55,
+    "name": "Bridge Cross 15",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        3,
+        2
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 56,
+    "name": "Bridge Cross 16",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "checkpoints": [
+      [
+        4,
+        1
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 57,
+    "name": "Bridge Cross 17",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        2,
+        2
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 58,
+    "name": "Bridge Cross 18",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "checkpoints": [
+      [
+        3,
+        1
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 59,
+    "name": "Bridge Cross 19",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        4,
+        2
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 60,
+    "name": "Bridge Cross 20",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      1,
+      6
+    ],
+    "goal": [
+      4,
+      1
+    ],
+    "walls": [
+      [
+        0,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "checkpoints": [
+      [
+        2,
+        1
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "穴（Pit）を通ると橋（Bridge）になる！橋を架けて対岸へ渡ろう。"
+  },
+  {
+    "stage_id": 61,
+    "name": "Time Phase 1",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "fade",
+    "fade_turns": 3,
+    "hint": "このステージの軌跡壁は 3 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 62,
+    "name": "Time Phase 2",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "このステージの軌跡壁は 2 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 63,
+    "name": "Time Phase 3",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "fade",
+    "fade_turns": 3,
+    "hint": "このステージの軌跡壁は 3 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 64,
+    "name": "Time Phase 4",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "このステージの軌跡壁は 2 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 65,
+    "name": "Time Phase 5",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "fade",
+    "fade_turns": 3,
+    "hint": "このステージの軌跡壁は 3 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 66,
+    "name": "Time Phase 6",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "このステージの軌跡壁は 2 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 67,
+    "name": "Time Phase 7",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [],
+    "trace_type": "fade",
+    "fade_turns": 3,
+    "hint": "このステージの軌跡壁は 3 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 68,
+    "name": "Time Phase 8",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "このステージの軌跡壁は 2 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 69,
+    "name": "Time Phase 9",
+    "width": 6,
+    "height": 8,
+    "max_moves": 4,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 3,
+    "hint": "このステージの軌跡壁は 3 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 70,
+    "name": "Time Phase 10",
+    "width": 6,
+    "height": 8,
+    "max_moves": 5,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "このステージの軌跡壁は 2 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 71,
+    "name": "Time Phase 11",
+    "width": 6,
+    "height": 8,
+    "max_moves": 5,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 3,
+    "hint": "このステージの軌跡壁は 3 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 72,
+    "name": "Time Phase 12",
+    "width": 6,
+    "height": 8,
+    "max_moves": 5,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "このステージの軌跡壁は 2 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 73,
+    "name": "Time Phase 13",
+    "width": 6,
+    "height": 8,
+    "max_moves": 5,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 3,
+    "hint": "このステージの軌跡壁は 3 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 74,
+    "name": "Time Phase 14",
+    "width": 6,
+    "height": 8,
+    "max_moves": 5,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "このステージの軌跡壁は 2 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 75,
+    "name": "Time Phase 15",
+    "width": 6,
+    "height": 8,
+    "max_moves": 5,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 3,
+    "hint": "このステージの軌跡壁は 3 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 76,
+    "name": "Time Phase 16",
+    "width": 6,
+    "height": 8,
+    "max_moves": 5,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "このステージの軌跡壁は 2 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 77,
+    "name": "Time Phase 17",
+    "width": 6,
+    "height": 8,
+    "max_moves": 5,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 3,
+    "hint": "このステージの軌跡壁は 3 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 78,
+    "name": "Time Phase 18",
+    "width": 6,
+    "height": 8,
+    "max_moves": 5,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "このステージの軌跡壁は 2 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 79,
+    "name": "Time Phase 19",
+    "width": 6,
+    "height": 8,
+    "max_moves": 5,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 3,
+    "hint": "このステージの軌跡壁は 3 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 80,
+    "name": "Time Phase 20",
+    "width": 6,
+    "height": 8,
+    "max_moves": 5,
+    "start": [
+      2,
+      6
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "このステージの軌跡壁は 2 ターン後に消滅する。時間差を味方にしよう。"
+  },
+  {
+    "stage_id": 81,
+    "name": "Mastery 1",
+    "width": 7,
+    "height": 9,
+    "max_moves": 4,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 82,
+    "name": "Mastery 2",
+    "width": 7,
+    "height": 9,
+    "max_moves": 4,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 83,
+    "name": "Mastery 3",
+    "width": 7,
+    "height": 9,
+    "max_moves": 4,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 84,
+    "name": "Mastery 4",
+    "width": 7,
+    "height": 9,
+    "max_moves": 4,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 85,
+    "name": "Mastery 5",
+    "width": 7,
+    "height": 9,
+    "max_moves": 4,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 86,
+    "name": "Mastery 6",
+    "width": 7,
+    "height": 9,
+    "max_moves": 4,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 87,
+    "name": "Mastery 7",
+    "width": 7,
+    "height": 9,
+    "max_moves": 4,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 88,
+    "name": "Mastery 8",
+    "width": 7,
+    "height": 9,
+    "max_moves": 4,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 89,
+    "name": "Mastery 9",
+    "width": 7,
+    "height": 9,
+    "max_moves": 4,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 90,
+    "name": "Mastery 10",
+    "width": 7,
+    "height": 9,
+    "max_moves": 5,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 91,
+    "name": "Mastery 11",
+    "width": 7,
+    "height": 9,
+    "max_moves": 5,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 92,
+    "name": "Mastery 12",
+    "width": 7,
+    "height": 9,
+    "max_moves": 5,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 93,
+    "name": "Mastery 13",
+    "width": 7,
+    "height": 9,
+    "max_moves": 5,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 94,
+    "name": "Mastery 14",
+    "width": 7,
+    "height": 9,
+    "max_moves": 5,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 95,
+    "name": "Mastery 15",
+    "width": 7,
+    "height": 9,
+    "max_moves": 5,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 96,
+    "name": "Mastery 16",
+    "width": 7,
+    "height": 9,
+    "max_moves": 5,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 97,
+    "name": "Mastery 17",
+    "width": 7,
+    "height": 9,
+    "max_moves": 5,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 98,
+    "name": "Mastery 18",
+    "width": 7,
+    "height": 9,
+    "max_moves": 5,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 99,
+    "name": "Mastery 19",
+    "width": 7,
+    "height": 9,
+    "max_moves": 5,
+    "start": [
+      3,
+      7
+    ],
+    "goal": [
+      3,
+      1
+    ],
+    "walls": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "pits": [],
+    "checkpoints": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "trace_type": "fade",
+    "fade_turns": 2,
+    "hint": "複合ルールステージ。先の手番で起こる変化を逆算して進もう。"
+  },
+  {
+    "stage_id": 100,
+    "name": "THE FINAL SHIFT",
+    "width": 7,
+    "height": 9,
+    "max_moves": 6,
+    "start": [
+      3,
+      8
+    ],
+    "goal": [
+      3,
+      0
+    ],
+    "walls": [
+      [
+        1,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "pits": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "checkpoints": [
+      [
+        1,
+        1
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "trace_type": "bridge",
+    "fade_turns": 0,
+    "hint": "TRACE SHIFT 最終ステージ。全オーブを回収し、橋を架けてゴールへ到達せよ！"
+  }
+]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/stage_select.gd" id="1_select"]
+
+[node name="StageSelect" type="Control" node_paths=PackedStringArray("back_button", "grid_container", "scroll_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_select")
+back_button = NodePath("MainLayout/TopBar/BackButton")
+grid_container = NodePath("MainLayout/ScrollContainer/CenterMargin/GridContainer")
+scroll_container = NodePath("MainLayout/ScrollContainer")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.97, 0.98, 0.99, 1)
+
+[node name="MainLayout" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="TopMargin" type="Control" parent="MainLayout"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="MainLayout"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="BackButton" type="Button" parent="MainLayout/TopBar"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "戻る"
+
+[node name="TitleLabel" type="Label" parent="MainLayout/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "ふたりの道 · 全100面"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MainLayout/TopBar"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="CenterMargin" type="MarginContainer" parent="MainLayout/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="GridContainer" type="GridContainer" parent="MainLayout/ScrollContainer/CenterMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
+columns = 2
+
+[node name="BottomMargin" type="Control" parent="MainLayout"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
