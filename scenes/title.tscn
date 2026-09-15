@@ -60,7 +60,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.22, 0.28, 0.34, 1)
 theme_override_font_sizes/font_size = 36
-text = "2人の道を、考える。\n\nAとBを交互に動かし、同じ文字の輪へ。\n通った道は壁に。相手の道を残そう。\n100面を進むと、矢印と一時停止が登場。"
+text = "2人の道を、考える。\n\nAとBを交互に動かし、同じ文字の輪へ。\n道は壁に、点線は相手用の橋に。\n橋と鍵で、相手の道をつなぐ100面。"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer"]
@@ -77,7 +77,7 @@ text = "はじめる / つづきから"
 custom_minimum_size = Vector2(0, 132)
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "100面から選ぶ"
+text = "ステージを選ぶ"
 
 [node name="ProgressLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2

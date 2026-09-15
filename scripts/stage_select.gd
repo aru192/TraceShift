@@ -91,14 +91,19 @@ func _populate_stages() -> void:
 		else:
 			btn.text = "%d\nLOCK" % i
 			btn.disabled = true
-			btn.modulate = Color(0.35, 0.35, 0.45, 0.6)
+			btn.modulate = Color(0.87, 0.89, 0.92, 1)
 		
 		var data: Dictionary = sm.get_stage_data(i)
 		btn.text = "%02d  %s\n%s" % [i, data.name, ("✓ %d手でクリア" % sav.get_best_moves(i)) if is_completed else ("最大%dマス · 目標%d手" % [data.step_limit,data.par_moves])]
+		if not is_unlocked:
+			btn.text = "%02d  未解禁\n%d面をクリアすると解禁" % [i,i-1]
 		btn.pressed.connect(_on_stage_selected.bind(i))
 		grid_container.add_child(btn)
 
 func _on_stage_selected(stage_id: int) -> void:
+	var sav := _get_save_manager()
+	if sav and not sav.is_stage_unlocked(stage_id):
+		return
 	var sm := _get_stage_manager()
 	if sm != null and sm.has_method("set_current_stage"):
 		sm.call("set_current_stage", stage_id)

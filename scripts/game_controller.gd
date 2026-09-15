@@ -20,6 +20,7 @@ var is_cleared := false
 var hint_visible := false
 var undo_button: Button
 var hint_button: Button
+var legend_label: Label
 
 func _ready() -> void:
 	cores.append(core)
@@ -47,10 +48,23 @@ func _ready() -> void:
 	clear_dialog.next_pressed.connect(_on_next_stage_pressed)
 	clear_dialog.retry_pressed.connect(load_current_stage)
 	clear_dialog.select_pressed.connect(_on_select_pressed)
+	legend_label = Label.new()
+	legend_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	legend_label.add_theme_font_size_override("font_size",30)
+	legend_label.add_theme_color_override("font_color",Color("546371"))
+	legend_label.custom_minimum_size.y = 85
+	legend_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	var bottom := hint_label.get_parent()
+	bottom.add_child(legend_label)
+	bottom.move_child(legend_label,hint_label.get_index()+1)
 	load_current_stage()
 
 func load_current_stage() -> void:
-	current_stage_data = get_node("/root/StageManager").get_current_stage_data()
+	var manager = get_node("/root/StageManager")
+	var save = get_node_or_null("/root/SaveManager")
+	if save and not save.is_stage_unlocked(manager.current_stage_id):
+		manager.set_current_stage(save.max_unlocked_stage)
+	current_stage_data = manager.get_current_stage_data()
 	if current_stage_data.is_empty():
 		return
 	for piece in cores:
@@ -90,6 +104,16 @@ func _update_ui() -> void:
 	target_info_label.visible = true
 	target_info_label.text = "ゴール %d / 2" % [int(rules.docked(0))+int(rules.docked(1))]
 	rule_badge_label.add_theme_color_override("font_color", PuzzleBoard.CORE_COLORS[rules.active])
+	if legend_label:
+		var legends: Array[String] = []
+		if not rules.bridges.is_empty():
+			legends.append("点線＝橋の材料 / 実線＝相手用の橋 / ×＝通行不可")
+		if not rules.keys.is_empty():
+			legends.append("鍵→同じ番号の扉を開く（指を離して確定）")
+		elif not rules.arrows.is_empty() or not rules.stops.is_empty():
+			legends.append("矢印＝出口の方向 / □＝一度止まって交代")
+		legend_label.text = "\n".join(legends)
+		legend_label.visible = not legends.is_empty()
 	var used := rules.path.size()-1
 	rule_badge_label.text = "%s の番   %d / %d マス" % [who,used,rules.step_limit]
 	if rules.path.back() == rules.goals[rules.active] and used > 0:
@@ -108,7 +132,7 @@ func _update_ui() -> void:
 	elif hint_visible:
 		hint_label.text = str(current_stage_data.hint)
 	elif used > 0:
-		hint_label.text = "指を離すと、この軌跡が2人を阻む壁に。\n直前のマスへなぞり戻すと取り消せます。"
+		hint_label.text = "指を離すと確定。普通の道は壁、点線は橋に。\n直前のマスへなぞり戻すと取り消せます。"
 	else:
 		hint_label.text = str(current_stage_data.brief)
 

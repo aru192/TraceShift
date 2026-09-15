@@ -97,3 +97,6 @@ crash*.txt
 
 # Separate repository for the hosted smartphone build
 /phone-site/
+
+# Python verification cache
+__pycache__/

@@ -67,11 +67,44 @@ func _draw() -> void:
 				draw_polyline(PackedVector2Array([tip-direction*12+side*12,tip,tip-direction*12-side*12]),Color("626e7a"),4,true)
 			if rules.stops.has(cell):
 				draw_rect(Rect2(center-Vector2(16,16),Vector2(32,32)),Color("626e7a"),false,4)
-			if rules.traces.has(cell):
+			if rules.bridges.has(cell):
+				var owner: int = rules.bridges[cell]
+				var state: int = rules.traces.get(cell,-1)
+				var target: int = 1-owner if state == owner else owner
+				var tint: Color = CORE_COLORS[target]
+				if state == 2:
+					draw_style_box(_box(Color("d3d9df"),7),rect.grow(-3))
+					draw_line(center-Vector2(20,20),center+Vector2(20,20),Color("626e7a"),4)
+					draw_line(center+Vector2(-20,20),center+Vector2(20,-20),Color("626e7a"),4)
+				else:
+					draw_style_box(_box(tint.lightened(0.88),7),rect.grow(-3))
+					for dy in [-23,0,23]:
+						if state == -1:
+							draw_dashed_line(center+Vector2(-32,dy),center+Vector2(32,dy),tint,3,8)
+						else:
+							draw_line(center+Vector2(-32,dy),center+Vector2(32,dy),tint,5)
+					draw_string(ThemeDB.fallback_font,center+Vector2(-7,-32),"A" if target == 0 else "B",HORIZONTAL_ALIGNMENT_LEFT,-1,20,tint)
+			elif rules.traces.has(cell):
 				var tint: Color = CORE_COLORS[rules.traces[cell]]
 				draw_style_box(_box(tint.lightened(0.82),7),rect.grow(-3))
 				draw_line(center-Vector2(20,20),center+Vector2(20,20),tint,5)
 				draw_line(center+Vector2(-20,20),center+Vector2(20,-20),tint,5)
+			if rules.keys.has(cell) and (rules.opened & (1 << rules.keys[cell])) == 0:
+				var ink := Color("765aa5")
+				draw_arc(center+Vector2(-15,-10),10,0,TAU,24,ink,4,true)
+				draw_line(center+Vector2(-8,-3),center+Vector2(15,20),ink,4)
+				draw_line(center+Vector2(8,13),center+Vector2(17,4),ink,4)
+				draw_string(ThemeDB.fallback_font,center+Vector2(21,-15),str(rules.keys[cell]+1),HORIZONTAL_ALIGNMENT_LEFT,-1,24,ink)
+			if rules.gates.has(cell):
+				var ink := Color("765aa5") if not rules.gate_open(cell) else Color("9babb7")
+				if not rules.gate_open(cell):
+					draw_style_box(_box(Color("eee9f6"),7),rect.grow(-4))
+					for dx in [-28,0,28]:
+						draw_line(center+Vector2(dx,-32),center+Vector2(dx,32),ink,4)
+				else:
+					draw_line(center+Vector2(-35,-30),center+Vector2(-35,30),ink,3)
+					draw_line(center+Vector2(35,-30),center+Vector2(35,30),ink,3)
+				draw_string(ThemeDB.fallback_font,center+Vector2(24,-34),str(rules.gates[cell]+1),HORIZONTAL_ALIGNMENT_LEFT,-1,24,ink)
 	for who in range(2):
 		var center := cell_to_local_pos(rules.goals[who])
 		var tint: Color = CORE_COLORS[who]

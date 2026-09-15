@@ -11,7 +11,11 @@ var goals: Array[Vector2i] = []
 var fixed_walls: Dictionary = {}
 var arrows: Dictionary = {}
 var stops: Dictionary = {}
-var traces: Dictionary = {} # cell -> owning core; blocks both cores
+var bridges: Dictionary = {} # cell -> first builder (0=A, 1=B)
+var keys: Dictionary = {} # cell -> channel
+var gates: Dictionary = {}
+var opened: int = 0
+var traces: Dictionary = {} # normal: owner, bridge: builder then 2=collapsed
 var active: int = 0
 var path: Array[Vector2i] = []
 var history: Array[Dictionary] = []
@@ -27,6 +31,16 @@ func setup(stage: Dictionary) -> void:
 	traces.clear()
 	arrows.clear()
 	stops.clear()
+	bridges.clear()
+	keys.clear()
+	gates.clear()
+	opened = 0
+	for tile in stage.get("bridges", []):
+		bridges[Vector2i(tile[0],tile[1])] = int(tile[2])
+	for tile in stage.get("keys", []):
+		keys[Vector2i(tile[0],tile[1])] = int(tile[2])
+	for tile in stage.get("gates", []):
+		gates[Vector2i(tile[0],tile[1])] = int(tile[2])
 	for tile in stage.get("arrows", []):
 		arrows[Vector2i(tile[0],tile[1])] = Vector2i(tile[2],tile[3])
 	for tile in stage.get("stops", []):
@@ -65,7 +79,7 @@ func can_step(cell: Vector2i) -> bool:
 		return false
 	if arrows.has(path.back()) and delta != arrows[path.back()]:
 		return false
-	return not (cell in path or fixed_walls.has(cell) or traces.has(cell) or cell == positions[1-active] or cell == goals[1-active])
+	return not (cell in path or terrain_blocks(cell, active) or cell == positions[1-active] or cell == goals[1-active])
 
 func step(cell: Vector2i) -> bool:
 	if not can_step(cell):
@@ -79,9 +93,13 @@ func step(cell: Vector2i) -> bool:
 func commit() -> bool:
 	if path.size() < 2:
 		return false
-	history.append({"positions": positions.duplicate(), "traces": traces.duplicate(), "active": active, "moves": moves})
+	history.append({"positions": positions.duplicate(), "traces": traces.duplicate(), "active": active, "moves": moves, "opened": opened})
 	for i in range(path.size()-1):
-		traces[path[i]] = active
+		var cell := path[i]
+		traces[cell] = 2 if bridges.has(cell) and traces.has(cell) else active
+	for cell in path:
+		if keys.has(cell):
+			opened |= 1 << keys[cell]
 	positions[active] = path.back()
 	moves += 1
 	if not docked(1-active):
@@ -103,11 +121,11 @@ func undo() -> bool:
 	traces = old.traces.duplicate()
 	active = old.active
 	moves = old.moves
+	opened = old.opened
 	path = [positions[active]]
 	return true
 
-# A parked/unfinished core's cell cannot be used by the other core:
-# even after leaving it, it turns into a permanent wall.
+# Conservative reachability: future bridges and opened gates may restore a route.
 func route_exists(who: int) -> bool:
 	if docked(who):
 		return true
@@ -121,9 +139,9 @@ func route_exists(who: int) -> bool:
 			if arrows.has(cell) and direction != arrows[cell]:
 				continue
 			var next: Vector2i = cell + direction
-			if not inside(next) or visited.has(next) or fixed_walls.has(next) or traces.has(next):
+			if not inside(next) or visited.has(next) or terrain_blocks(next, who, true):
 				continue
-			if next == positions[1-who] or next == goals[1-who]:
+			if (next == positions[1-who] and not bridges.has(next)) or next == goals[1-who]:
 				continue
 			if next == goals[who]:
 				return true
@@ -131,7 +149,30 @@ func route_exists(who: int) -> bool:
 			frontier.append(next)
 	return false
 
+func gate_open(cell: Vector2i) -> bool:
+	return not gates.has(cell) or (opened & (1 << gates[cell])) != 0
+
+func terrain_blocks(cell: Vector2i, who: int, optimistic: bool = false) -> bool:
+	if fixed_walls.has(cell):
+		return true
+	# A partner can still collect a key or build a bridge later. Reachability
+	# must overestimate these future options to avoid declaring a false loss.
+	if not optimistic and not gate_open(cell):
+		return true
+	if bridges.has(cell):
+		if traces.has(cell):
+			return traces[cell] == 2 or traces[cell] == who
+		return who != bridges[cell] and not optimistic
+	return traces.has(cell)
+
 func blocked_core() -> int:
+	if not bridges.is_empty() or not gates.is_empty():
+		var can_move := false
+		for direction in DIRECTIONS:
+			if can_step(positions[active] + direction):
+				can_move = true
+		if not can_move and not won():
+			return active
 	for who in range(2):
 		if not route_exists(who):
 			return who

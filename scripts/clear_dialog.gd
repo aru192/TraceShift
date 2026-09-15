@@ -35,6 +35,8 @@ func show_clear(stage_id: int, moves_used: int, max_moves: int) -> void:
 	var last_stage: bool = stage_id == get_node("/root/StageManager").get_total_stages()
 	if stage_label:
 		stage_label.text = "第 %d 面 クリア" % stage_id
+		if not last_stage:
+			stage_label.text += " · 次は第 %d 面" % (stage_id+1)
 	if moves_label:
 		moves_label.text = "%d手で到着 · 目標%d手\n%s" % [moves_used, max_moves, "最短手順です！" if moves_used <= max_moves else "次は、もっと少ない手数で。"]
 	if title_label:
